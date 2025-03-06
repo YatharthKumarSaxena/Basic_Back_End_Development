@@ -1,0 +1,2 @@
+Hello I am trying to read from the files , this file is used to understand 
+how we can make use of in built library provided by the node.js
