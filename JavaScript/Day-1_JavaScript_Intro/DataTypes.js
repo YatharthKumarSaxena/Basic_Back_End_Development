@@ -43,4 +43,4 @@ var person = {
     hobby : "coding"
 }
 
-console.log(person)
+console.log(typeof person)

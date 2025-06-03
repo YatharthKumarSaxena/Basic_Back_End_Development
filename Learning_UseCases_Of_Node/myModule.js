@@ -1,4 +1,3 @@
-
 let prod = (a,b) =>{
     return a*b;
 }

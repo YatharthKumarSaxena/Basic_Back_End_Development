@@ -1,8 +1,7 @@
 // Set Time Out can make you to make JavaScript Asynchronously execute the Statement
 
 // Concept Of Event Loop, CallBack Function , CallBack Queue and WebAPI comes in Asychronous Execution
-// CallBack Function is registered with WebAPI and Timer gets Triggered
-// Event Loop keep an eye if time is done push the callback function in callback queue 
+// CallBack Function is registered with WebAPI and Web Browser Timer gets Triggered (Web API is Simply a Browser)
 // Also Event Loop keep an eye whether our Stack is empty or not if yes pop callback queue and put in Call Stack
 
 console.log("I am printing in the First Line");

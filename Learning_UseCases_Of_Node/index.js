@@ -5,4 +5,4 @@ const op = require("./myModule2")
 console.log(typeof operation);
 console.log(operation.prod(3,4));
 console.log(operation.div(9,3));
-console.log(op.add(2,3));
+console.log(op.sub(2,3));

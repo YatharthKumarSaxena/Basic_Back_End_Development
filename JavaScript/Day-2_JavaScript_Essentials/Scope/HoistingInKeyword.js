@@ -1,13 +1,8 @@
-// Var KeyWord Has Hoisting feature 
-// i.e Once Variable var is initialized JS automatically Hoist i.e declare Var At Top of the Program File
-
-console.log(i); // <- No Error Answer Will be Undefined
+console.log(i); // ✅ undefined — var is hoisted with value undefined
 var i = 67;
 
-// console.log(a); // <- Error as Let is Not Hoisted
-// If We do not Write a keyword before variable by default it is taken as var 
-// But in Hoisting it Behaves as Let if var keyword us not explicitly mentioned
-a = 7; 
+console.log(a); // ❌ ReferenceError — 'a' not defined yet
+a = 7; // ✅ This will create a global variable ONLY IF line 5 didn't throw error
 
-// console.log(t); // Error as Const is also not Hoisted
+// console.log(t); // ❌ ReferenceError — const is hoisted but lives in TDZ (Temporary Dead Zone)
 const t = 9;

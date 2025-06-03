@@ -2,7 +2,7 @@
 
 const f1Promise = new Promise((resolve,reject) => {
     setTimeout(()=>{
-        if(Math.random() > 0.6){
+        if(Math.random() > 0.09){
             resolve("I am in for Goa");
         }else{
             reject("My cat is ill");
@@ -11,7 +11,7 @@ const f1Promise = new Promise((resolve,reject) => {
 })
 const f2Promise = new Promise((resolve,reject) => {
     setTimeout(()=>{
-        if(Math.random() > 0.83){
+        if(Math.random() > 0.1){
             resolve("I am in for Goa");
         }else{
             reject("My Father has planned another trip");

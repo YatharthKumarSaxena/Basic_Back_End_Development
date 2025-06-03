@@ -37,12 +37,12 @@ const nicePromise = new Promise((resolve,reject) => {
 })
 
 // Action on Promise
-nicePromise.then((msg,pd) => {
-    console.log("My Parent Decision is",pd);
+nicePromise.then((msg,parentDecision) => {
+    console.log("My Parent Decision is",parentDecision);
     console.log(msg);
     console.log("My parents are always satisfied with my Decisions")
-}).catch((msg,pd) => {
-    console.log("My Parent Decision is",pd);
+}).catch((msg,parentDecision) => {
+    console.log("My Parent Decision is",parentDecision);
     console.log(msg);
 }).finally(() => {
     console.log("I am always with my Parent Decisions whatever decision my parent have");
