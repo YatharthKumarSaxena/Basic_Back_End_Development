@@ -16,13 +16,37 @@ db.on("error",()=>{
 db.once("open",()=>{
     console.log("Connected to Mongo DB Successfully\n");
     // Logic to Insert Data into Database
-    init();
+    // init();
     // Logic to Retrieve Data 
-    fetchData();
+    // fetchData();
     // Logic to Delete Data 
-    deleteData();
-    // 
+    // deleteData();
+    // Logic to Update Data
+    updateData();
 })
+
+async function updateData(){
+    // Logic to Update Data
+    try{
+        // Update Document By Its Object ID // Note:- { new: true }:- option to return updated doc (otherwise you may get older document)
+        const st = await StudentModel.findByIdAndUpdate('68403f8b46ffa16e92dd5a03',{$set: {name:"Rupesh"}},{new: true});
+        // Update Single Documents By Some Condition
+        const student = await StudentModel.findOneAndUpdate({name: "Austin"},{$set :{name: "Yatharth"}},{new: true});
+        // Update All Documents By Some Condition
+        const list = await StudentModel.updateMany({name: "Austin"},{$set: {cpi:10}},{new: true});
+        // updateOne :- Returns only meta data while findOneAndUpdate returns document
+        // replaceOne :- Replaces the entire document (except _id) with the new one.
+        // In MongoDB, any keyword starting with $ is called a MongoDB operator
+        // $set :- It updates a specific field without replacing the entire document.
+        
+        console.log(student);
+        console.log(st);
+        console.log(list);
+    }catch(err){
+        console.log("Error occured while updating the document");
+        console.log(err);
+    }
+}
 
 async function deleteData(){
     // Logic to Delete Data 
