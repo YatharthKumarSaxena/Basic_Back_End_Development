@@ -19,11 +19,31 @@ db.once("open",()=>{
     init();
     // Logic to Retrieve Data 
     fetchData();
+    // Logic to Delete Data 
+    deleteData();
+    // 
 })
+
+async function deleteData(){
+    // Logic to Delete Data 
+    try{
+        // Delete Document By Its Object ID
+        const student = await StudentModel.findByIdAndDelete("683ef32b6bc78e164d1bf2d4");
+        // Delete One Document Only Based on Some Condition
+        const student1 = await StudentModel.deleteOne({name: "Yatharth"});
+        // Delete Multiple Documents Only Based on Some Condition
+        const teachers = await TeacherModel.deleteMany({name: "Arun"});
+        console.log(teachers.deletedCount + " users deleted.");
+    }
+    catch(err){
+        console.log("Error Occured while Deleting the Document");
+        console.log(err);
+    }
+}
 
 async function fetchData(){
     // Logic to Retrieve Data By ID
-    try{// To fetch Only Single Record // Retuen null if Record Not Found
+    try{// To fetch Only Single Record // Return null if Record Not Found
         const student = await StudentModel.findOne({name: "Yatarth"}); 
         // To Fetch all Records but Reurn an Empty List [] if No Record Found
         const teacher = await TeacherModel.find({name: "Arn"}); 
@@ -43,9 +63,9 @@ async function fetchData(){
 async function init(){ // Function is made Async as We are using await 
     // Logic to Insert Data
     const Student = {
-        name: "Yatharth",
-        age: 20,
-        cpi: 9.007
+        name: "Austin",
+        age: 21,
+        cpi: 9.456
     }
     const Teacher = {
         name: "Arun",
@@ -53,8 +73,8 @@ async function init(){ // Function is made Async as We are using await
         email: "arunsaxena3489@gmail.com",
         subject: ["Math","Science"]
     }
-    // const std_obj = await StudentModel.create(Student);
-    // console.log(std_obj);
-    // const tea_obj = await TeacherModel.create(Teacher);
-    // console.log(tea_obj);
+    const std_obj = await StudentModel.create(Student);
+    console.log(std_obj);
+    const tea_obj = await TeacherModel.create(Teacher);
+    console.log(tea_obj);
 }
