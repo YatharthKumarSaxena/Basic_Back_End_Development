@@ -1,26 +1,27 @@
 const mongoose = require("mongoose")
 const StudentModel = require("./Models/Student.model");
 const TeacherModel = require("./Models/Teacher.Model");
-// Logic to Connect Code With Mongo DB Database
 
+// Logic to Connect Code With Mongo DB Database
 mongoose.connect("mongodb://0.0.0.0/be_demodb"); // Specifying the Address where to Connect
 
 // Ordering to Connect with MongoDB
-
 const db = mongoose.connection; // Start the Connection with MongoDB
 
+// If connection not done
 db.on("error",()=>{
     console.log("Error in Accessing with Database\n");
 })
 
+// If connection done properly
 db.once("open",()=>{
     console.log("Connected to Mongo DB Successfully\n");
     // Logic to Insert Data into Database
-    // init();
+    init();
     // Logic to Retrieve Data 
-    // fetchData();
+    fetchData();
     // Logic to Delete Data 
-    // deleteData();
+    deleteData();
     // Logic to Update Data
     updateData();
 })
@@ -37,8 +38,7 @@ async function updateData(){
         // updateOne :- Returns only meta data while findOneAndUpdate returns document
         // replaceOne :- Replaces the entire document (except _id) with the new one.
         // In MongoDB, any keyword starting with $ is called a MongoDB operator
-        // $set :- It updates a specific field without replacing the entire document.
-        
+        // $set :- It updates a specific field without replacing the entire document.    
         console.log(student);
         console.log(st);
         console.log(list);
@@ -81,7 +81,6 @@ async function fetchData(){
         console.log("Error happened in Retrieving the Data");
         console.log(err);
     }
-    
 }
 
 async function init(){ // Function is made Async as We are using await 

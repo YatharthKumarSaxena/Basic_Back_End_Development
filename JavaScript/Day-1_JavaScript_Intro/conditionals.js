@@ -23,3 +23,6 @@ switch(fruit){
         console.log("Data Not Available")
         break;
 }
+
+// Checking Stickers can be printed or not
+console.log("⚠️ 🛑 💥 ");
